@@ -27,5 +27,5 @@ This extension is based on the work of https://github.com/bublath/FHEM-Signalbot
 For source and license of the lib libsignal_jni.so see
 https://github.com/signalapp/libsignal-client
  
-The native library for the Signal messenger (armv7/armhf) are taken from here:
+The native library for the Signal messenger (armv7/armhf) is taken from here:
 https://github.com/exquo/signal-libs-build
