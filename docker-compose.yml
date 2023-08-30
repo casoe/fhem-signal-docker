@@ -1,27 +1,19 @@
 services:
-
-  fhem:
-    hostname: fhemsignal
-    container_name: fhem_signal
-#    image: fhem/fhem:bullseye
-    build: .
-    restart: always
-    tty: true
-    stdin_open: true
-    network_mode: host
-    volumes:
-      - "./fhem/:/opt/fhem/"
-      - "./signal/:/var/lib/signal-cli/"
-      
-#    devices:
-#      - "/dev/ttyUSB0:/dev/ttyUSB0"
-
-    environment:
-      FHEM_UID: 1000
-      FHEM_GID: 1000
-      FHEMUSER: fhem
-      FHEMGROUP: fhem
-      TIMEOUT: 10
-      RESTART: 1
-      TELNETPORT: 7072
-      TZ: Europe/Berlin
+    fhem:
+        restart: always
+        network_mode: host
+        build: .
+        #image: ghcr.io/fhem/fhem/fhem-minimal-docker:bullseye
+        volumes:
+            - "./fhem/:/opt/fhem/"
+            - "./signal/:/var/lib/signal-cli/"
+        #devices:
+        #    - "/dev/ttyUSB0:/dev/ttyUSB0"
+        environment:
+            FHEM_UID: 1000
+            FHEM_GID: 1000
+            TIMEOUT: 10
+            RESTART: 1
+            TELNETPORT: 7072
+            TZ: Europe/Berlin
+            APT_PKGS: speedtest-cli

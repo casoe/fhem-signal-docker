@@ -1,4 +1,4 @@
-FROM ghcr.io/fhem/fhem/fhem-minimal-docker:bullseye
+FROM ghcr.io/fhem/fhem/fhem-minimal-docker:3-bullseye
 
 MAINTAINER holoarts<holoarts@yahoo.com>
 ARG SIGNALVERSION="0.12.1"
@@ -6,10 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
 # Install dependencies
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get -q -y install openjdk-17-jre-headless zip
-RUN apt-get clean && apt-get autoremove
+RUN apt update && apt upgrade -y
+RUN apt -q -y install openjdk-17-jre-headless zip
+RUN apt clean && apt-get autoremove
 
 WORKDIR "/tmp"
 RUN wget -qN https://github.com/AsamK/signal-cli/releases/download/v$SIGNALVERSION/signal-cli-$SIGNALVERSION-Linux.tar.gz -O signal-cli-$SIGNALVERSION.tar.gz
