@@ -21,8 +21,8 @@ An original fhem/fhem-minimal-docker image is used as a foundation, see the docu
 
 * clone files 
 * cd into this directory
-* run `docker-compose up -d`
-* go to http://`your hostname`:8083
+* run `docker compose up -d`
+* go to http://YOUR_HOSTNAME:8083
 * define a new entity with  `define signal Signalbot`
 
 ## More info
