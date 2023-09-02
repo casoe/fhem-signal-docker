@@ -14,10 +14,11 @@ An original fhem/fhem-minimal-docker image is used as a foundation, see the docu
 
 * clone files 
 * cd into this directory
-* docker build -t fhem-minimal-signal-docker:1.0 .
-* export CR_PAT=YOUR_TOKEN
-* echo $CR_PAT | docker login ghcr.io -u YOUR_LOGIN --password-stdin
-* docker push ghcr.io/casoe/fhem-minimal-signal-docker
+* run `docker build -t fhem-minimal-signal-docker:1.0 .`
+* run `export CR_PAT=YOUR_TOKEN`
+* run `echo $CR_PAT | docker login ghcr.io -u YOUR_LOGIN --password-stdin`
+* run `docker tag YOUR_IMAGE_ID ghcr.io/casoe/fhem-minimal-signal-docker`
+* run `docker push ghcr.io/casoe/fhem-minimal-signal-docker`
 
 ## Build locally and test the container with minimal configuration
 
