@@ -6,9 +6,17 @@ Updates for signal-cli here: https://github.com/AsamK/signal-cli
 
 Updates for libsignal_jni.so here: https://github.com/exquo/signal-libs-build/releases
 
-An original fhem/fhem-docker image is used as a foundation, see the documentation at https://github.com/fhem/fhem-docker/ . 
+An original fhem/fhem-minimal-docker image is used as a foundation, see the documentation at https://github.com/fhem/fhem-docker/ . 
 
-## Usage
+## Build and push the container to github container registry (ghcr.io)
+
+* clone files 
+* cd into this directory
+* docker build -t fhem-minimal-signal-docker:1.0 .
+* echo $CR_PAT | docker login ghcr.io -u casoe@gmx.de --password-stdin
+* docker push ghcr.io/casoe/fhem-minimal-signal-docker
+
+## Build locally and test the container with minimal configuration
 
 * clone files 
 * cd into this directory
@@ -16,8 +24,7 @@ An original fhem/fhem-docker image is used as a foundation, see the documentatio
 * go to http://`your hostname`:8083
 * define a new entity with  `define signal Signalbot`
 
-
-## more info
+## More info
 
 See the FHEM Wiki (German) for the usage of Signalbot.
 https://wiki.fhem.de/wiki/Signalbot
