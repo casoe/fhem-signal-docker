@@ -2,6 +2,8 @@
 
 Files to build a docker image with Signal support via Signalbot (Integration for signal messenger) and signal-cli. At the moment it's only tested on a Rapberry Pi 3 (armv7/armhf).
 
+A pre-built package can be found here: https://github.com/users/casoe/packages/container/package/fhem-minimal-signal-docker
+
 Updates for signal-cli here: https://github.com/AsamK/signal-cli
 
 Updates for libsignal_jni.so here: https://github.com/exquo/signal-libs-build/releases
