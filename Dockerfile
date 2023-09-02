@@ -1,20 +1,20 @@
 FROM ghcr.io/fhem/fhem/fhem-minimal-docker:3-bullseye
 
-MAINTAINER holoarts<holoarts@yahoo.com>
+MAINTAINER casoe@gmx.de
 ARG SIGNALVERSION="0.12.1"
 ENV DEBIAN_FRONTEND noninteractive
 ENV TERM xterm
 
 # Install dependencies
 RUN apt update && apt upgrade -y
-RUN apt -q -y install openjdk-17-jre-headless zip
+RUN apt -q -y install openjdk-17-jre-headless zip speedtest-cli
 RUN apt clean && apt-get autoremove
 
 WORKDIR "/tmp"
 RUN wget -qN https://github.com/AsamK/signal-cli/releases/download/v$SIGNALVERSION/signal-cli-$SIGNALVERSION-Linux.tar.gz -O signal-cli-$SIGNALVERSION.tar.gz
 RUN tar zxf signal-cli-$SIGNALVERSION.tar.gz
 RUN mv signal-cli-$SIGNALVERSION  /opt/signal
-RUN wget -qN https://github.com/exquo/signal-libs-build/releases/download/libsignal_v0.31.0/libsignal_jni.so-v0.31.0-armv7-unknown-linux-gnueabihf.tar.gz
+RUN wget -qN https://github.com/exquo/signal-libs-build/releases/download/libsignal_v0.32.0/libsignal_jni.so-v0.32.0-armv7-unknown-linux-gnueabihf.tar.gz
 RUN tar zxf libsignal_jni.so-v0.31.0-armv7-unknown-linux-gnueabihf.tar.gz
 RUN zip -u /opt/signal/lib/libsignal-client-*.jar libsignal_jni.so
 
