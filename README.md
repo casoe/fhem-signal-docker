@@ -1,8 +1,10 @@
 # Extension for FHEM-docker installation to communicate with Signal
 
-Files to build a docker image with Signal support via Signalbot (Integration for signal messenger) and signal-cli (https://github.com/AsamK/signal-cli). At the moment it only tested on a Rapberrypi (ARM). On x86 architure use Dockerfile.x86 .
+Files to build a docker image with Signal support via Signalbot (Integration for signal messenger) and signal-cli. At the moment it's only tested on a Rapberry Pi 3 (armv7/armhf).
+Updates for signal-cli here: https://github.com/AsamK/signal-cli
+Updates for libsignal_jni.so here: https://github.com/exquo/signal-libs-build/releases
 
-The original fhem/fhem-docker image is used, see the documentation at https://github.com/fhem/fhem-docker/ . 
+An original fhem/fhem-docker image is used as a foundation, see the documentation at https://github.com/fhem/fhem-docker/ . 
 
 ## Usage
 
@@ -21,11 +23,7 @@ https://wiki.fhem.de/wiki/Signalbot
 See FHEM Forum (German) for more details
 https://forum.fhem.de/index.php/topic,118370.0.html
 
-
 This extension is based on the work of https://github.com/bublath/FHEM-Signalbot.     
 
 For source and license of the lib libsignal_jni.so see
 https://github.com/signalapp/libsignal-client
- 
-The native library for the Signal messenger (armv7/armhf) is taken from here:
-https://github.com/exquo/signal-libs-build
